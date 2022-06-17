@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A dice game" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dicegame.css" type="text/css" />
+</head>
+<body>
+    <header>
+       <h1>The Dice Game</h1>
+       <h3>by Derek Chevrefils</h3>
+    </header>
+    <main>
+        <div id="game-container">
+            <div id="play-area">
+            <div id="you-container">
+                <h4>You</h4>
+                <table>
+                    <tr>
+                        <th colspan="2">Your Dice</th>
+                    </tr>
+                    <tr>
+                        <td id="dice1-player">
+                            <span >Dice #1</span>
+                            <img src="images/1.jpg" class="dice1-img">
+                        </td>
+                        <td id="dice2-player">
+                            <span>Dice #2</span>
+                            <img src="images/1.jpg" class="dice2-img">
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="2" id="your-score">Your Score</th>
+                    </tr>
+                    <tr>
+                        <td id="round-score">Score this Round</td>
+                        <td>Total Score</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="opponent-container">
+                <h4>Opponent</h4>
+                <table>
+                    <tr>
+                        <th colspan="2">Opponent's Dice</th>
+                    </tr>
+                    <tr>
+                        <td id="dice1-opponent">
+                            <span>Dice #1</span>
+                            <img src="images/1.jpg" class="dice1-img">
+                        </td>
+                        <td id="dice2-opponent">
+                            <span>Dice #2</span>
+                             <img src="images/1.jpg" class="dice2-img">
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="2" id="opponent-score">Opponents Score</th>
+                    </tr>
+                    <tr>
+                        <td>Score this Round</td>
+                        <td>Total Score</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <div id="buttons">
+                <button id="new-game">New Game</button>
+                <button id="roll-dice">Roll Dice</button>
+            </div>
+            <div id="instructions">
+                <h4>How to Play:</h4>
+                <ul>
+                    <li>To start, click the "Roll Dice" button.</li>
+                    <li>To advance to the next round, click the "Roll Dice" button again.</li>
+                    <li>After three rounds, the game is over and the final score is calculated.</li>
+                    <li>If you want to play again, click the "New Game" button or refresh the page.</li>
+                </ul>
+                    
+        </div>
+    </main>
+</body>

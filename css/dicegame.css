@@ -1,0 +1,70 @@
+#game-container{
+    width: 1200px;
+    margin: auto;
+    border: 1px solid grey;
+    padding: 50px 20px 50px 20px;
+}
+#play-area{
+    display: flex;
+    border: 2px solid green;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    justify-content: center;
+    
+}
+table{
+    margin-bottom: 15px;
+}
+table, td{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 300px;
+    text-align: center;
+    padding: 50px 10px 50px 10px;
+  
+}
+th{
+    text-align: center;
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+h4{
+    text-align: center;
+}
+#you-container{
+    background-color: aquamarine;
+    padding: 30px;
+    border: 1px solid black;
+}
+#opponent-container{
+    background-color: rgb(127, 255, 159);
+    padding: 30px;
+    border: 1px solid black;
+    border-left:0;
+}
+#buttons{
+    text-align: center;
+    padding: 10px;
+}
+button{
+    padding: 5px;
+    border-radius: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
+#instructions{
+    padding: 50px;
+    margin-left: 100px;
+}
+#instructions > h4{
+    text-align: left;
+}
+.dice1-img{
+    display:none;
+}
+.dice2-img{
+    display:none;
+}
