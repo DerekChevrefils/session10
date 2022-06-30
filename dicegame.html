@@ -1,77 +1,22 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="A dice game" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/dicegame.css" type="text/css" />
-</head>
-<body>
-    <header>
-       <h1>The Dice Game</h1>
-       <h3>by Derek Chevrefils</h3>
-    </header>
-    <main>
-        <div id="game-container">
-            <div id="play-area">
-            <div id="you-container">
-                <h4>You</h4>
-                <table>
-                    <tr>
-                        <th colspan="2">Your Dice</th>
-                    </tr>
-                    <tr>
-                        <td id="dice1-player">
-                            <span >Dice #1</span>
-                            <img src="images/1.jpg" class="dice1-img">
-                        </td>
-                        <td id="dice2-player">
-                            <span>Dice #2</span>
-                            <img src="images/1.jpg" class="dice2-img">
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th colspan="2" id="your-score">Your Score</th>
-                    </tr>
-                    <tr>
-                        <td id="round-score">Score this Round</td>
-                        <td>Total Score</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="opponent-container">
-                <h4>Opponent</h4>
-                <table>
-                    <tr>
-                        <th colspan="2">Opponent's Dice</th>
-                    </tr>
-                    <tr>
-                        <td id="dice1-opponent">
-                            <span>Dice #1</span>
-                            <img src="images/1.jpg" class="dice1-img">
-                        </td>
-                        <td id="dice2-opponent">
-                            <span>Dice #2</span>
-                             <img src="images/1.jpg" class="dice2-img">
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <th colspan="2" id="opponent-score">Opponents Score</th>
-                    </tr>
-                    <tr>
-                        <td>Score this Round</td>
-                        <td>Total Score</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-            <div id="buttons">
-                <button id="new-game">New Game</button>
-                <button id="roll-dice">Roll Dice</button>
-            </div>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A dice game" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <title>The Dice Game</title>
+
+    </head>
+    <body>
+        <header>
+            <h1 class="main-header">The Dice Game</h1>
+            <h3>by Derek Chevrefils</h3>
+        </header>
+        <div id="instructions-wrapper">
             <div id="instructions">
                 <h4>How to Play:</h4>
                 <ul>
@@ -79,8 +24,79 @@
                     <li>To advance to the next round, click the "Roll Dice" button again.</li>
                     <li>After three rounds, the game is over and the final score is calculated.</li>
                     <li>If you want to play again, click the "New Game" button or refresh the page.</li>
-                </ul>
-                    
+                </ul>    
+                <p style="text-align:center;"><button id="start-game" class="btn">Start Game</button></p>     
+            </div>
         </div>
-    </main>
-</body>
+        <main>
+  
+            <div id="pagemask"></div>
+            <div id="winner-popup">
+                <h1 id="win-or-lose"></h1>
+                <p id="game-result">You <span id="won-or-lost"></span> by <span id="score-difference"></span> points!</p>  
+            <p id="new-game-popup"><button class="btn" id="popup-button">New Game</button></p>
+            </div>
+                <div id="play-area">
+                <div id="you-container" class="player">
+                    <h4>You</h4>
+                    <table>
+                        <tr>
+                            <th colspan="2">Your Dice</th>
+                        </tr>
+                        <tr class="dice-container">
+                            <td id="dice1-player" class="dice-container">
+                                <span class="dice-text" >Dice #1</span>
+                                <img src="images/1.jpg" alt="images/1.jpg" class="p1-dice1-img">
+                            </td>
+                            <td id="dice2-player" class="dice-container">
+                                <span class="dice-text">Dice #2</span>
+                                <img src="images/2.jpg" alt="images/2.jpg" class="p1-dice2-img">
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th colspan="2" id="your-score">Your Score</th>
+                        </tr>
+                        <tr>
+                            <td class="p1-round-score score">Roll the dice!</td>
+                            <td class="p1-total-score score">Total Score:</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="opponent-container" class="player">
+                    <h4>Opponent</h4>
+                    <table>
+                        <tr>
+                            <th colspan="2">Opponent's Dice</th>
+                        </tr>
+                        <tr>
+                            <td id="dice1-opponent"  class="dice-container">
+                                <span class="dice-text">Dice #1</span>
+                                <img src="images/1.jpg" alt="images/1.jpg" class="p2-dice1-img">
+                            </td>
+                            <td id="dice2-opponent" class="dice-container">
+                                <span class="dice-text">Dice #2</span>
+                                <img src="images/2.jpg" alt="images/2.jpg" class="p2-dice2-img">
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th colspan="2" id="opponent-score">Opponents Score</th>
+                        </tr>
+                        <tr>
+                            <td class="p2-round-score score">Roll the dice!</td>
+                            <td class="p2-total-score score">Total Score:</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="new-game" class="btn">New Game</button>
+                <button id="roll-dice" class="btn">Roll Dice</button>
+            </div>
+        </main>
+        <script src="script/dicegame.js" defer></script>
+    </body>
+</html>

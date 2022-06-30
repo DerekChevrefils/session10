@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+$body-color: radial-gradient(#809489, #032b02);
+$table-felt-background: url(../images/table-cloth.jpg);
+$main-font: 'Lilita One', cursive;
+
+@mixin dark-round-edges($rounded-corners, $outline-offset, $outline-color) {
+  border-radius: $rounded-corners;
+  outline-offset: $outline-offset;
+  outline: 400px solid $outline-color;
+}
+
+img {
+  margin-top: 10px;
+  @include dark-round-edges(20px, -2px, rgb(24, 24, 24));
+}
+
+main {
+  position: relative;
+}
+
+body {
+  box-sizing: border-box;
+  background: $body-color;
+}
+
+#winner-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 275px;
+  padding: 25px;
+  border-radius: 10px;
+  background-image: url(../images/confetti.gif);
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#game-result {
+  margin: auto;
+  display: inline-block;
+  font-family: $main-font;
+  font-size: 36px;
+  backdrop-filter: blur(5px);
+}
+
+#win-or-lose {
+  font-size: 60px;
+  letter-spacing: 5px;
+  color: rgb(22, 172, 34);
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0, 0, 0, .1),
+    0 0 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 5px 10px rgba(0, 0, 0, .25),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 20px 20px rgba(0, 0, 0, .15);
+}
+
+h4 {
+  color: white;
+  text-shadow: 3px 3px #000000;
+  font-family: $main-font;
+  font-size: 24px;
+  margin: 15px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+#new-game-popup {
+  margin-top: 30px;
+}
+
+#pagemask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  transition: opacity 1s ease-out;
+}
+
+header {
+  background: radial-gradient(#9e1506, #180b0b);
+  max-width: 900px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 40px 10px 40px;
+  border-radius: 5px 5px 0px 0px;
+
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+h1,
+h3 {
+  text-align: center;
+  font-family: $main-font;
+  color: white;
+  text-shadow: 3px 3px #000000;
+  font-family: 'Lilita One', cursive;
+  letter-spacing: 2px;
+}
+
+#play-area {
+  display: flex;
+  background: radial-gradient(#9e1506, #180b0b);
+  border-radius: 0px 0px 5px 5px;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 0px;
+  padding: 0px 40px 20px 40px;
+  padding-top: 0px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+table {
+  margin-bottom: 15px;
+  border-color: #c9c9c9;
+  font-family: $main-font;
+  font-weight: 100;
+  text-shadow: 2px 2px #000000;
+  letter-spacing: 1px;
+  box-shadow: #000000 0px 3px 12px;
+}
+
+table,
+td {
+  border: 2px solid;
+  border-collapse: collapse;
+  width: 300px;
+  text-align: center;
+  padding: 50px 10px 50px 10px;
+}
+
+td {
+  color: white;
+  border-color: #000000;
+}
+
+th {
+  text-align: center;
+  padding: 15px;
+  background: radial-gradient(#9e1506, #180b0b);
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+}
+
+.dice-container {
+  padding: 20px 0 20px 0;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 0px;
+}
+
+#you-container {
+  background-image: $table-felt-background;
+  background-size: cover;
+  padding: 30px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#opponent-container {
+  background-image: $table-felt-background;
+  background-size: cover;
+  padding: 30px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+img {
+  border-radius: 20px;
+  outline: 4px solid rgb(24, 24, 24);
+  outline-offset: -2px;
+  margin-top: 10px;
+}
+
+.dice-text {
+  font-family: $main-font;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding-bottom: 6px;
+}
+
+#buttons {
+  text-align: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: $main-font;
+  letter-spacing: 1px;
+  background: radial-gradient(#9e1506, #180b0b);
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#instructions-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#instructions {
+  padding: 50px;
+  font-family: $main-font;
+  background: radial-gradient(#eae5f0, #9a97a1);
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 500px;
+  height: 250px;
+  padding: 25px;
+  position: absolute;
+  top: -100px;
+  right: 0px;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  transition: opacity 1s ease-in;
+  z-index: 1000;
+}
+
+#instructions>h4 {
+  text-align: center;
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+.spin {
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    max-width: 600px;
+  }
+
+  #play-area {
+    max-width: 600px;
+    text-align: center
+  }
+
+  #you-container>* {
+    max-width: 200px;
+  }
+
+  #opponent-container>* {
+    max-width: 200px;
+  }
+
+  img {
+    max-width: 75px;
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  #instructions {
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  #winner-popup {
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  header {
+    max-width: 300px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
+
+  .main-header {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h4,
+  h3 {
+    margin: 0px auto 10px auto;
+  }
+
+  #play-area {
+    max-width: 300px;
+    text-align: center;
+    display: block;
+  }
+
+  #you-container {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  #you-container>* {
+    width: 275px;
+  }
+
+  #opponent-container>* {
+    width: 275px;
+  }
+
+  .dice-container {
+    padding: 5px;
+  }
+
+  .score {
+    padding: 10px;
+  }
+
+  th {
+    padding: 8px;
+  }
+
+  table {
+    margin: auto;
+  }
+
+  img {
+    max-width: 50px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width:400px) {
+  body {
+    overflow: hidden;
+  }
+}
